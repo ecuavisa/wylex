@@ -11,7 +11,7 @@ $publicKey = "5ca314c6-fa18-496b-981e-4f631d544ee3";
 $privateKey = '9sCD1E+Zi3Y35vKn8iHKpw==';
 
 $api = Curl::GetPage([
-    "url" => "https://suscripciones.ecuavisa.com/api/v1/users?status=active&date_from=".$fechaInicio."&date_to=".$fechaFin,
+    "url" => "https://suscripciones.ecuavisa.com/api/v1/users",
     "requestHeaders" => [
         "Authorization" => "Bearer wyleex+vistazo" 
     ]
