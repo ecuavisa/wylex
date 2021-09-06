@@ -10,8 +10,8 @@ function encrypt($text, $publicKey, $privateKey){
     return base64_encode($encrypted);
 } 
 
-function arrayData($fechaInicio, $fechaFin){
-    $file = __DIR__ . "/data-".$fechaInicio.$fechaFin.".txt";
+function arrayData($fechaInicio, $fechaFin, $pag = "ecuavisa"){
+    $file = __DIR__ . "/".$pag."-data-".$fechaInicio.$fechaFin.".txt";
     $lines = [];
     if(file_exists($file)){
         $lines = file($file, FILE_IGNORE_NEW_LINES);
@@ -19,8 +19,8 @@ function arrayData($fechaInicio, $fechaFin){
     return $lines; 
 }
 
-function fileData($email, $fechaInicio, $fechaFin){
-    $file = __DIR__ . "/data-".$fechaInicio.$fechaFin.".txt";
+function fileData($email, $fechaInicio, $fechaFin, $pag = "ecuavisa"){
+    $file = __DIR__ . "/".$pag."-data-".$fechaInicio.$fechaFin.".txt";
     if(!file_exists($file)){
         $fp = fopen($file ,"wb");
         fwrite($fp, $email);

@@ -11,7 +11,7 @@ $publicKey = "5ca314c6-fa18-496b-981e-4f631d544ee3";
 $privateKey = '9sCD1E+Zi3Y35vKn8iHKpw==';
 
 $api = Curl::GetPage([
-    "url" => "https://suscripciones.ecuavisa.com/api/v1/users?status=active&date_from=".$fechaInicio."&date_to=".$fechaFin,
+    "url" => "https://suscripciones.vistazo.com/api/v1/users?status=active&date_from=".$fechaInicio."&date_to=".$fechaFin,
     "requestHeaders" => [
         "Authorization" => "Bearer wyleex+vistazo" 
     ]
@@ -37,9 +37,9 @@ foreach ($apiData as $key => $data) {
     
     $text = json_encode($userEncription);
     $encrypted = encrypt($text, $publicKey, $privateKey);
-    $url = urlencode("https:/www.ecuavisa.com");
+    $url = urlencode("https:/www.vistazo.com");
     $codificado = "1,". $publicKey. "," .$encrypted;
-    $urlProtect = "https://www.ecuavisa.com/user-portlet/refreshuserentitlements?redirect=".$url."&ssodata=".urlencode($codificado);
+    $urlProtect = "https://www.vistazo.com/user-portlet/refreshuserentitlements?redirect=".$url."&ssodata=".urlencode($codificado);
     
     try {
       $apiProtec = Curl::GetPage([
