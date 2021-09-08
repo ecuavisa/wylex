@@ -7,8 +7,8 @@ include "Helper.php";
 $fechaInicio = "2021-08-01";
 $fechaFin = date("Y-m-t");
 
-$publicKey = "5ca314c6-fa18-496b-981e-4f631d544ee3";
-$privateKey = '9sCD1E+Zi3Y35vKn8iHKpw==';
+$publicKey = "86f1d5db-6fdf-41f8-8206-267d88f8b57c";
+$privateKey = 'uH9AwqsWKKYPUalWuShcQA==';
 
 $api = Curl::GetPage([
     "url" => "https://suscripciones.ecuavisa.com/api/v1/users",
